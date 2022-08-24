@@ -7,16 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
-  canAddCar = false
-
   constructor() {
-    setTimeout(()=> {
-      this.canAddCar = true
-    }, 3000)
-
-   }
-
-  ngOnInit(): void {
   }
+
+ ngOnInit(): void {
+ }
+
+  addCarStatus =''
+  inputText = ''
+
+  addCar (){
+    this.addCarStatus = 'Car was added!'
+  }
+
+  onKeyUp (event: Event) {
+    this.inputText = (<HTMLInputElement>event.target).value;
+  }
+
+
+
 
 }

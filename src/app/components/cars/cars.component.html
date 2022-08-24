@@ -1,5 +1,16 @@
 <div>
-    <button [disabled]="!canAddCar" style="margin: 5px; width: 100px; padding: 5px 10px 5px 10px;">Add car</button>
+    <button style="margin: 5px; width: 100px; padding: 5px 10px 5px 10px;"
+    (click)="addCar()"
+    >Add car</button>
+    <p style="color: red;"> {{addCarStatus}} </p>
     <app-car></app-car>
     <app-car></app-car>
+
+    <hr>
+
+    <input type="text"
+        (input)="onKeyUp($event)"
+    >
+    <p style="color: red;"> {{inputText}} </p>
+
 </div>
